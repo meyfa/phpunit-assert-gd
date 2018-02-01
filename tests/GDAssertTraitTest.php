@@ -1,11 +1,13 @@
 <?php
 
+use PHPUnit\Framework\TestCase;
+
 use AssertGD\GDAssertTrait;
 
 /**
  * @SuppressWarnings(PHPMD)
  */
-class GDAssertTraitTest extends PHPUnit_Framework_TestCase
+class GDAssertTraitTest extends TestCase
 {
     use GDAssertTrait;
 

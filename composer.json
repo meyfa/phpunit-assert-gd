@@ -13,11 +13,12 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "phpunit/phpunit": ">=4.5"
+        "phpunit/phpunit": ">=4.8"
     },
     "autoload": {
         "psr-4": {
-            "AssertGD\\": "src/"
+            "AssertGD\\": "src/",
+            "PHPUnit\\": "src/PHPUnit/"
         }
     }
 }

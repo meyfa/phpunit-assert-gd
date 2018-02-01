@@ -3,6 +3,7 @@
 namespace AssertGD;
 
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Constraint\Constraint;
 
 /**
  * PHPUnit constraint for checking that two GD image resources are similar.
@@ -12,7 +13,7 @@ use PHPUnit\Framework\TestCase;
  * (10% + 20% + 5% + 0% + 0%) / 5 = 7%.
  * A threshold of 0.07 would still match, while a threshold of 0.06 would not.
  */
-class GDSimilarityConstraint extends \PHPUnit_Framework_Constraint
+class GDSimilarityConstraint extends Constraint
 {
     private $expected;
     private $threshold;

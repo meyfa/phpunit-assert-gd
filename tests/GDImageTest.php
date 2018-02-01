@@ -1,11 +1,13 @@
 <?php
 
+use PHPUnit\Framework\TestCase;
+
 use AssertGD\GDImage;
 
 /**
  * @SuppressWarnings(PHPMD)
  */
-class GDImageTest extends PHPUnit_Framework_TestCase
+class GDImageTest extends TestCase
 {
     public function test__construct()
     {
