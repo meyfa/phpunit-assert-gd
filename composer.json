@@ -1,0 +1,23 @@
+{
+    "name": "meyfa/phpunit-assert-gd",
+    "homepage": "https://github.com/meyfa/phpunit-assert-gd",
+    "type": "library",
+    "description": "PHPUnit matcher/assertions for GD image resources",
+    "keywords": ["phpunit", "assert", "gd", "matcher", "image", "resource"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fabian Meyer",
+            "homepage": "http://meyfa.net"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "phpunit/phpunit": "^4.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "AssertGD\\": "src/"
+        }
+    }
+}
