@@ -8,6 +8,12 @@ required assertions that allow you do to so.
 It supports comparing **files on disk** as well as **image resources** in
 memory.
 
+**Compatibility note:** This library supports PHP versions 5.3.3 up to 7.2.2. It
+supports PHPUnit from version 4.8.36 to version 6.5.0.
+Since those PHPUnit versions are completely incompatible, extreme hacks have to
+be used that depend on the Composer autoloading order. Please file an issue if
+you notice any errors.
+
 ## Installation
 
 Add this package to your Composer dev-dependencies:
