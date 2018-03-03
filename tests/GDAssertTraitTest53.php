@@ -34,7 +34,7 @@ class GDAssertTraitTest extends TestCase
     {
         // should compare successfully
         $this->assertThat('./tests/images/stripes-bw-10x10.png',
-            new GDSimilarityConstraint('./tests/images/stripes-bw-10x10-alt.png', '', 1));
+            new GDSimilarityConstraint('./tests/images/stripes-bw-10x10-alt.png'), '', 1);
     }
 
     public function testJpeg()
@@ -45,6 +45,6 @@ class GDAssertTraitTest extends TestCase
 
         // should compare successfully with threshold = 0.1
         $this->assertThat('./tests/images/jpeg.jpg',
-            new GDSimilarityConstraint('./tests/images/jpeg-alt.jpg', '', 0.1));
+            new GDSimilarityConstraint('./tests/images/jpeg-alt.jpg'), '', 0.1);
     }
 }
