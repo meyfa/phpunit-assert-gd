@@ -13,5 +13,5 @@ matrix:
 install:
   - composer install --no-interaction
 script:
-  - if [[ $(phpenv version-name) != "5.3" ]]; then vendor/bin/phpunit --configuration .phpunit.xml fi
-  - if [[ $(phpenv version-name) == "5.3" ]]; then vendor/bin/phpunit --configuration .phpunit53.xml fi
+  - if [[ ${TRAVIS_PHP_VERSION:0:3} != "5.3" ]]; then vendor/bin/phpunit --configuration .phpunit.xml; fi
+  - if [[ ${TRAVIS_PHP_VERSION:0:3} == "5.3" ]]; then vendor/bin/phpunit --configuration .phpunit53.xml; fi
