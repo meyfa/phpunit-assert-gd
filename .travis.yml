@@ -8,4 +8,7 @@ php:
   - 7.2
 install:
   - composer install --no-interaction
-script: vendor/bin/phpunit --configuration .phpunit.xml
+script:
+  - if [[ ${TRAVIS_PHP_VERSION:0:3} == "5.3" ]]; then vendor/bin/phpunit --configuration .phpunit.xml
+    else vendor/bin/phpunit --configuration .phpunit53.xml
+    fi
