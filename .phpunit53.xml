@@ -3,7 +3,8 @@
          beStrictAboutTestsThatDoNotTestAnything="false">
     <testsuites>
         <testsuite name="Test Suite for meyfa/phpunit-assert-gd">
-            <directory suffix="Test.php">tests/</directory>
+            <directory suffix="Test53.php">tests/</directory>
+            <directory suffix="ImageTest.php">tests/</directory>
         </testsuite>
     </testsuites>
     <filter>

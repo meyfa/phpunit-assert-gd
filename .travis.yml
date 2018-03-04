@@ -4,6 +4,14 @@ php:
   - 5.5
   - 5.6
   - 7.0
+  - 7.1
+  - 7.2
+matrix:
+  include:
+    - php: 5.3
+      dist: precise
 install:
   - composer install --no-interaction
-script: vendor/bin/phpunit --configuration .phpunit.xml
+script:
+  - if [[ ${TRAVIS_PHP_VERSION:0:3} != "5.3" ]]; then vendor/bin/phpunit --configuration .phpunit.xml; fi
+  - if [[ ${TRAVIS_PHP_VERSION:0:3} == "5.3" ]]; then vendor/bin/phpunit --configuration .phpunit53.xml; fi
