@@ -1,9 +1,7 @@
 language: php
 php:
-  - 5.6
-  - 7.0
-  - 7.1
   - 7.2
+  - 7.3
 matrix:
   include:
     - php: 5.3
@@ -15,5 +13,4 @@ matrix:
 install:
   - composer install --no-interaction
 script:
-  - if [[ ${TRAVIS_PHP_VERSION:0:3} != "5.3" ]]; then vendor/bin/phpunit --configuration .phpunit.xml; fi
-  - if [[ ${TRAVIS_PHP_VERSION:0:3} == "5.3" ]]; then vendor/bin/phpunit --configuration .phpunit53.xml; fi
+  - vendor/bin/phpunit --configuration .phpunit.xml

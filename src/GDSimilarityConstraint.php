@@ -2,7 +2,6 @@
 
 namespace AssertGD;
 
-use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\Constraint\Constraint;
 
 /**
@@ -27,8 +26,6 @@ class GDSimilarityConstraint extends Constraint
      */
     public function __construct($expected, $threshold = 0)
     {
-        parent::__construct();
-
         $this->expected = $expected;
         $this->threshold = $threshold;
     }
@@ -38,7 +35,7 @@ class GDSimilarityConstraint extends Constraint
      *
      * @return string
      */
-    public function toString()
+    public function toString(): string
     {
         return sprintf('is similar with threshold = <%F>', $this->threshold);
     }
@@ -51,7 +48,7 @@ class GDSimilarityConstraint extends Constraint
      *
      * @return bool
      */
-    public function matches($other)
+    public function matches($other): bool
     {
         $imgOther = new GDImage($other);
         $imgExpec = new GDImage($this->expected);

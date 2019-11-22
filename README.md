@@ -8,11 +8,9 @@ required assertions that allow you do to so.
 It supports comparing **files on disk** as well as **image resources** in
 memory.
 
-**Compatibility note:** This library supports PHP versions 5.3.3 up to 7.2.2. It
-supports PHPUnit from version 4.8.36 to version 6.5.0.
-Since those PHPUnit versions are completely incompatible, extreme hacks have to
-be used that depend on the Composer autoloading order. Please file an issue if
-you notice any errors.
+**Compatibility note:** The 2.x version of this library supports PHP versions of at least 7.2. It
+supports PHPUnit versions of at least 8.0. If you require support for older versions of PHPUnit and/or PHP,
+you will need to use version 1.x of this library.
 
 ## Installation
 
@@ -32,7 +30,7 @@ The assertions are available as a
 <?php
 use AssertGD\GDAssertTrait;
 
-class ExampleTest extends PHPUnit_Framework_TestCase
+class ExampleTest extends PHPUnit\Framework\TestCase
 {
     // this trait adds the assert methods to your test case
     use GDAssertTrait;
@@ -40,24 +38,6 @@ class ExampleTest extends PHPUnit_Framework_TestCase
     public function testSomething()
     {
         $this->assertSimilarGD('./tests/expected.png', './tests/actual.png');
-    }
-}
-```
-
-**Note:** While this library should work with PHP down to at least v5.3.3,
-traits are a v5.4.0 feature. For versions lower than v5.4.0, you have to use
-this alternative syntax:
-
-```php
-<?php
-use AssertGD\GDSimilarityConstraint;
-
-class ExampleTest extends PHPUnit_Framework_TestCase
-{
-    public function testSomething()
-    {
-        $this->assertThat('./tests/actual.png',
-            new GDSimilarityConstraint('./tests/expected.png'));
     }
 }
 ```
