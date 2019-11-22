@@ -25,7 +25,7 @@ trait GDAssertTrait
      *
      * @return void
      *
-     * @throws PHPUnit_Framework_AssertionFailedError
+     * @throws PHPUnit\Framework\AssertionFailedError
      */
     public function assertSimilarGD($expected, $actual, $message = '', $threshold = 0)
     {
@@ -47,7 +47,7 @@ trait GDAssertTrait
      *
      * @return void
      *
-     * @throws PHPUnit_Framework_AssertionFailedError
+     * @throws PHPUnit\Framework\AssertionFailedError
      */
     public function assertNotSimilarGD($expected, $actual, $message = '', $threshold = 0)
     {

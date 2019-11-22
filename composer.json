@@ -12,14 +12,13 @@
         }
     ],
     "require": {
-        "php": ">=5.3.3",
-        "phpunit/phpunit": "^4.8",
+        "php": ">=7.2",
+        "phpunit/phpunit": "^8.0",
         "ext-gd": "*"
     },
     "autoload": {
         "psr-4": {
-            "AssertGD\\": "src/",
-            "PHPUnit\\": "src/PHPUnit/"
+            "AssertGD\\": "src/"
         }
     }
 }
