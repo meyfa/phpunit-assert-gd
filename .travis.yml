@@ -2,14 +2,6 @@ language: php
 php:
   - 7.2
   - 7.3
-matrix:
-  include:
-    - php: 5.3
-      dist: precise
-    - php: 5.4
-      dist: trusty
-    - php: 5.5
-      dist: trusty
 install:
   - composer install --no-interaction
 script:
