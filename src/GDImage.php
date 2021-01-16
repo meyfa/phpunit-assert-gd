@@ -14,6 +14,11 @@ class GDImage
      * Constructs a new instance. Accepts either an image resource or a file
      * path to load the image from.
      *
+     * If you provide an already-loaded image resource, it is YOUR job to
+     * destroy the image when you no longer need it.
+     * Resources loaded from a file will be destroyed by this class upon calling
+     * finish().
+     *
      * @param string|resource|\GdImage $value The image resource or file path.
      */
     public function __construct($value)
@@ -28,24 +33,33 @@ class GDImage
     }
 
     /**
-     * @return resource The underlying GD image resource.
+     * Disposes of this image by calling `finish()`.
      */
-    public function getResource()
+    public function __destruct()
     {
-        return $this->res;
+        $this->finish();
     }
 
     /**
-     * Frees the allocated resource if it was loaded in the constructor. Will
-     * not free the resource if it was passed already-loaded.
+     * Free any allocated resources. This should be called as soon as the image
+     * is no longer needed.
      *
      * @return void
      */
     public function finish()
     {
-        if ($this->destroy) {
+        if ($this->destroy && isset($this->res)) {
             imagedestroy($this->res);
         }
+        $this->res = null;
+    }
+
+    /**
+     * @return resource The underlying GD image resource.
+     */
+    public function getResource()
+    {
+        return $this->res;
     }
 
     /**
