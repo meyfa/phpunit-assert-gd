@@ -16,6 +16,9 @@
         "phpunit/phpunit": "^8.0",
         "ext-gd": "*"
     },
+    "require-dev": {
+        "phpmd/phpmd": "@stable"
+    },
     "autoload": {
         "psr-4": {
             "AssertGD\\": "src/"
