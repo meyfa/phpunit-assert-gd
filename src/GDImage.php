@@ -14,15 +14,17 @@ class GDImage
      * Constructs a new instance. Accepts either an image resource or a file
      * path to load the image from.
      *
-     * @param string|resource $value The image resource or file path.
+     * @param string|resource|\GdImage $value The image resource or file path.
      */
     public function __construct($value)
     {
-        if (!is_resource($value)) {
-            $value = imagecreatefromstring(file_get_contents($value));
-            $this->destroy = true;
+        // PHP < 8 uses resources, PHP >= 8 uses GdImage objects.
+        if (is_resource($value) || $value instanceof \GdImage) {
+            $this->res = $value;
+            return;
         }
-        $this->res = $value;
+        $this->res = imagecreatefromstring(file_get_contents($value));
+        $this->destroy = true;
     }
 
     /**
