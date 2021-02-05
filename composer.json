@@ -12,8 +12,8 @@
         }
     ],
     "require": {
-        "php": ">=7.2",
-        "phpunit/phpunit": "^8.0",
+        "php": ">=7.3",
+        "phpunit/phpunit": "^9.0",
         "ext-gd": "*"
     },
     "require-dev": {
