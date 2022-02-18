@@ -1,6 +1,6 @@
 # AssertGD for PHPUnit
 
-[![Build Status](https://travis-ci.com/meyfa/phpunit-assert-gd.svg?branch=master)](https://travis-ci.com/meyfa/phpunit-assert-gd)
+[![CI](https://github.com/meyfa/phpunit-assert-gd/actions/workflows/main.yml/badge.svg)](https://github.com/meyfa/phpunit-assert-gd/actions/workflows/main.yml)
 
 Trying to assert images with PHPUnit? This project provides a constraint and the
 required assertions that allow you do to so.
