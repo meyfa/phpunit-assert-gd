@@ -59,11 +59,17 @@ class GDImageTest extends TestCase
         $obj = new GDImage('./tests/images/stripes-bw-10x10.png');
         $img = $obj->getResource();
         $obj->finish();
-        try {
-            imagesx($img);
-        } catch (Exception $e) {
-            return;
+        // skip on PHP >= 8, where images are objects instead of resources
+        // and where manual destruction does nothing
+        if (is_resource($img)) {
+            // expect resource to be destroyed
+            try {
+                imagesx($img);
+            } catch (Exception $e) {
+                return;
+            }
+            $this->fail();
         }
-        $this->fail();
+        $this->assertNull($obj->getResource());
     }
 }
