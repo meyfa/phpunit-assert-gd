@@ -37,7 +37,7 @@ jobs:
 
       - name: Run test suite (PHP 5.3)
         if: ${{ matrix.php-version == '5.3' }}
-        run: vendor/bin/phpunit --configuration .phpunit53.xml
+        run: vendor/bin/phpunit --configuration phpunit53.xml
 
       - name: Run test suite
         if: ${{ matrix.php-version != '5.3' }}
