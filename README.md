@@ -1,6 +1,6 @@
 # AssertGD for PHPUnit
 
-[![Build Status](https://travis-ci.com/meyfa/phpunit-assert-gd.svg?branch=master)](https://travis-ci.com/meyfa/phpunit-assert-gd)
+[![CI](https://github.com/meyfa/phpunit-assert-gd/actions/workflows/main.yml/badge.svg?branch=v2.x)](https://github.com/meyfa/phpunit-assert-gd/actions/workflows/main.yml)
 
 Trying to assert images with PHPUnit? This project provides a constraint and the
 required assertions that allow you do to so.
@@ -8,9 +8,9 @@ required assertions that allow you do to so.
 It supports comparing **files on disk** as well as **image resources** in
 memory.
 
-**Compatibility note:** The 2.x version of this library supports PHP versions of at least 7.2. It
-supports PHPUnit versions of at least 8.0. If you require support for older versions of PHPUnit and/or PHP,
-you will need to use version 1.x of this library.
+**NOTE:** You are looking at an older version of this library that is kept
+around for legacy PHPUnit support. See the compatibility table below when
+deciding on the version to use for your project.
 
 ## Installation
 
@@ -19,6 +19,12 @@ Add this package to your Composer dev-dependencies:
 ```
 composer require --dev meyfa/phpunit-assert-gd
 ```
+
+| AssertGD version | Supported PHP version | Supported PHPUnit version |
+| :--------------- | :-------------------- | :------------------------ |
+| 3.*              | >= 7.3                | 9                         |
+| 2.*              | >= 7.2                | 8                         |
+| 1.*              | >= 5.3.3              | 4.8.36 - 6.5.0            |
 
 ## Examples
 
