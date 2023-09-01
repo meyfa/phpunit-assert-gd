@@ -20,6 +20,7 @@ composer require --dev meyfa/phpunit-assert-gd
 
 | AssertGD version | Supported PHP version | Supported PHPUnit version |
 | :--------------- | :-------------------- | :------------------------ |
+| 4.*              | >= 8.1                | 10.1                      |
 | 3.*              | >= 7.3                | 9                         |
 | 2.*              | >= 7.2                | 8                         |
 | 1.*              | >= 5.3.3              | 4.8.36 - 6.5.0            |

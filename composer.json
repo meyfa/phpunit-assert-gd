@@ -13,7 +13,7 @@
     ],
     "require": {
         "php": ">=7.3",
-        "phpunit/phpunit": "^9.0",
+        "phpunit/phpunit": "^10.1",
         "ext-gd": "*"
     },
     "require-dev": {
