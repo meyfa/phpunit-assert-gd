@@ -81,7 +81,7 @@ trait GDAssertTrait
      */
     public function isSimilarGD($expected, $threshold = 0, $diffCalculator = null)
     {
-        return new GDSimilarityConstraint($expected, $threshold, $diffCalculator ?? new RgbaChannels());
+        return new GDSimilarityConstraint($expected, $threshold, $diffCalculator ?? $this->diffCalculator ?? new RgbaChannels());
     }
 
     /**

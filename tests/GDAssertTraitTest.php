@@ -61,4 +61,12 @@ class GDAssertTraitTest extends TestCase
         $this->assertSimilarGD('./tests/images/transparent-black.gif', './tests/images/transparent-white.gif',
              '', 0, new ScaledRgbChannels());
     }
+
+    public function testSetDiffCalculator()
+    {
+        // apply diff calculator on all further assertions
+        $this->setDiffCalculator(new ScaledRgbChannels());
+
+        $this->assertSimilarGD('./tests/images/transparent-black.gif', './tests/images/transparent-white.gif');
+    }
 }
