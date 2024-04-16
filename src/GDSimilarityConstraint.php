@@ -2,7 +2,7 @@
 
 namespace AssertGD;
 
-use PHPUnit\Framework\TestCase;
+use AssertGD\DiffCalculator\RgbaChannels;
 use PHPUnit\Framework\Constraint\Constraint;
 
 /**
@@ -17,6 +17,10 @@ class GDSimilarityConstraint extends Constraint
 {
     private $expected;
     private $threshold;
+    /**
+     * @var DiffCalculator The difference calculator to compare the images with.
+     */
+    private $diffCalculator;
 
     /**
      * Constructs a new constraint. A threshold of 0 means only exactly equal
@@ -24,13 +28,15 @@ class GDSimilarityConstraint extends Constraint
      *
      * @param string|resource $expected  File name or resource to match against.
      * @param float           $threshold Error threshold between 0 and 1.
+     * @param DiffCalculator|null $diffCalculator The difference calculator to use.
      */
-    public function __construct($expected, $threshold = 0)
+    public function __construct($expected, $threshold = 0, $diffCalculator = null)
     {
         parent::__construct();
 
         $this->expected = $expected;
         $this->threshold = $threshold;
+        $this->diffCalculator = isset($diffCalculator) ? $diffCalculator : new RgbaChannels();
     }
 
     /**
@@ -67,7 +73,7 @@ class GDSimilarityConstraint extends Constraint
         $delta = 0;
         for ($x = 0; $x < $w; ++$x) {
             for ($y = 0; $y < $h; ++$y) {
-                $delta += $this->getPixelError($imgExpec, $imgOther, $x, $y);
+                $delta += $this->diffCalculator->calculate($imgExpec, $imgOther, $x, $y);
             }
         }
 
@@ -78,28 +84,5 @@ class GDSimilarityConstraint extends Constraint
         $error = $delta / ($w * $h);
 
         return $error <= $this->threshold;
-    }
-
-    /**
-     * Calculates the error between 0 and 1 (inclusive) of a specific pixel.
-     *
-     * @param GDImage $imgA The first image.
-     * @param GDImage $imgB The second image.
-     * @param int     $x    The pixel's x coordinate.
-     * @param int     $y    The pixel's y coordinate.
-     *
-     * @return float The pixel error.
-     */
-    private function getPixelError(GDImage $imgA, GDImage $imgB, $x, $y)
-    {
-        $pixelA = $imgA->getPixel($x, $y);
-        $pixelB = $imgB->getPixel($x, $y);
-
-        $diffR = abs($pixelA['red'] - $pixelB['red']) / 255;
-        $diffG = abs($pixelA['green'] - $pixelB['green']) / 255;
-        $diffB = abs($pixelA['blue'] - $pixelB['blue']) / 255;
-        $diffA = abs($pixelA['alpha'] - $pixelB['alpha']) / 127;
-
-        return ($diffR + $diffG + $diffB + $diffA) / 4;
     }
 }
