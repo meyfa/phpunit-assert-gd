@@ -97,7 +97,7 @@ comparing the RGBA color channel information at each pixel coordinate of the
 source image and the test image, and averaging the difference between each
 pixel to calculate the difference score.
 
-This will work for the majority of cases, but may given incorrect scoring 
+This will work for the majority of cases, but may give incorrect scoring 
 in certain circumstances, such as images that contain a lot of transparency.
 
 An alternative calculation method, which scales the RGB color channels
