@@ -1,11 +1,12 @@
 {
-  "name": "PHP 8.2",
-  "image": "mcr.microsoft.com/devcontainers/php:8.2-bullseye",
-  "features": {},
+  "name": "PHP with GD",
+  "build": { "dockerfile": "Dockerfile" },
   "postCreateCommand": "composer install",
   "customizations": {
     "vscode": {
-      "extensions": ["felixfbecker.php-intellisense"]
+      "extensions": [
+        "felixfbecker.php-intellisense"
+      ]
     }
   }
 }
