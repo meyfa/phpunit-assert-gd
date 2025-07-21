@@ -1,0 +1,11 @@
+{
+  "name": "PHP 8.2",
+  "image": "mcr.microsoft.com/devcontainers/php:8.2-bullseye",
+  "features": {},
+  "postCreateCommand": "composer install",
+  "customizations": {
+    "vscode": {
+      "extensions": ["felixfbecker.php-intellisense"]
+    }
+  }
+}
