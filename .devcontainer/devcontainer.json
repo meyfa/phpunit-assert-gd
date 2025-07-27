@@ -1,0 +1,12 @@
+{
+  "name": "PHP with GD",
+  "build": { "dockerfile": "Dockerfile" },
+  "postCreateCommand": "composer install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "felixfbecker.php-intellisense"
+      ]
+    }
+  }
+}
