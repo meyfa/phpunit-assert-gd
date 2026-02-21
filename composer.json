@@ -3,7 +3,14 @@
     "homepage": "https://github.com/meyfa/phpunit-assert-gd",
     "type": "library",
     "description": "PHPUnit matcher/assertions for GD image resources",
-    "keywords": ["phpunit", "assert", "gd", "matcher", "image", "resource"],
+    "keywords": [
+        "phpunit",
+        "assert",
+        "gd",
+        "matcher",
+        "image",
+        "resource"
+    ],
     "license": "MIT",
     "authors": [
         {
@@ -13,7 +20,7 @@
     ],
     "require": {
         "php": ">=8.1",
-        "phpunit/phpunit": "^10.1|^11.0",
+        "phpunit/phpunit": "^10.1|^11.0|^12.5.12",
         "ext-gd": "*"
     },
     "require-dev": {
